@@ -1,0 +1,10 @@
+Download unetbootin
+https://unetbootin.github.io/linux_download.html
+
+#make it executable
+chmod +x ./unetbootin-linux
+
+#run the executable
+./unetbootin-linux
+
+#size for persistance?
