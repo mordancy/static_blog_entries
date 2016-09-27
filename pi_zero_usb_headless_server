@@ -1,0 +1,24 @@
+
+#downlaod raspbian
+
+#flash raspbian to a sdcard
+dd bs=4M if=./path_to_img_file of=/dev/path_of_sdcard
+
+#pv command can be used to show the progress of dd
+#example:  dd bs=4M if=./path_to_img_file | pv | dd of=/dev/path_of_sdcard
+
+#edit config.txt, add this line to the end of the file
+dtoverlay=dwc2
+
+#edit cmdline.txt, add this after rootwait
+modules-load=dwc2,g_ether
+
+#once connect a new network connection is created
+#edit connections
+#rename the connection
+#go to the IPv4 tab
+#Change the method to "Link-local only"
+
+#connect to the pi
+ssh pi@raspberrypi.local
+#password is raspberry until you change it or add other users
