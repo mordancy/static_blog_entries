@@ -24,3 +24,7 @@ modules-load=dwc2,g_ether
 #connect to the pi
 ssh pi@raspberrypi.local
 #password is raspberry until you change it or add other users
+
+
+
+#more infomration on this blog: http://blog.gbaman.info/?p=791
