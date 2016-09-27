@@ -3,11 +3,11 @@
 
 #flash raspbian to a sdcard
 dd bs=4M if=./path_to_img_file of=/dev/path_of_sdcard
-#I used this command
-#dd bs=4M if=./2016-05-27-raspbian-jessie.img| pv | dd of=/dev/sdb
 
 #pv command can be used to show the progress of dd
 #example:  dd bs=4M if=./path_to_img_file | pv | dd of=/dev/path_of_sdcard
+#I used this command
+#dd bs=4M if=./2016-05-27-raspbian-jessie.img | pv | dd of=/dev/sdb
 
 #edit config.txt, add this line to the end of the file
 dtoverlay=dwc2
