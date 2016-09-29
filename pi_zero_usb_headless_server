@@ -19,12 +19,44 @@ modules-load=dwc2,g_ether
 #edit connections
 #rename the connection
 #go to the IPv4 tab
-#Change the method to "Link-local only"
+#Change the method to "Link-local only" (to access pi zero) or "Shared to another computer" (to share internet access)
 
 #connect to the pi
 ssh pi@raspberrypi.local
 #password is raspberry until you change it or add other users
-
+#to change the password type 'passwd' after you sign in
+# type 'ifconfig' to get the pi's ip address
 
 
 #more infomration on this blog: http://blog.gbaman.info/?p=791
+
+#it is a good idea to 
+
+#it is a good idea to run apt-get update and upgrade
+sudo apt-get update
+sudo apt-get upgrade
+
+#or in a single line
+sudo apt-get update && sudo apt-get upgrade
+
+#install a remote desktop server to the pi.
+#vnc server, xrdp, or another server program, I installed xrdp
+sudo apt-get install xrdp
+
+#ssh into the pi
+
+#connect from linux to the pi using a remote desktop program like rdesktop
+# flag u for pi username (optional - will prompt if not provided)
+# flag p for pi password (optional - will prompt if not provided)
+# then provide the ip address or server name
+rdesktop -u pi -p raspberry 10.42.0.54 # ip address from above
+rdesktop 10.42.0.54
+rdesktop raspberrypi.local
+
+
+
+
+
+#issues
+#sometimes I have to delete the wired connection
+#then is created and recreate it after conncting the pi and change the ip4 setting
