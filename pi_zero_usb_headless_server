@@ -48,15 +48,17 @@ sudo apt-get install xrdp
 #connect from linux to the pi using a remote desktop program like rdesktop
 # flag u for pi username (optional - will prompt if not provided)
 # flag p for pi password (optional - will prompt if not provided)
+# flag f for fullscreen (optional)
 # then provide the ip address or server name
-rdesktop -u pi -p raspberry 10.42.0.54 # ip address from above
-rdesktop 10.42.0.54
-rdesktop raspberrypi.local
+rdesktop -u pi -p raspberry -f 10.42.0.54      # ip address from above
+rdesktop -f 10.42.0.54                         # ip address from above
+rdesktop -f raspberrypi.local                  # use hostname
+rdesktop -u pi -p raspberry -f raspberrypi.local
 
 
 
 
 
 #issues
-#sometimes I have to delete the wired connection
+#sometimes I have to delete the wired connection and recreate it
 #then is created and recreate it after conncting the pi and change the ip4 setting
