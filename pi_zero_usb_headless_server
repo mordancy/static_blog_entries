@@ -15,22 +15,35 @@ dtoverlay=dwc2
 #edit cmdline.txt, add this after rootwait
 modules-load=dwc2,g_ether
 
+
 #once connect a new network connection is created
 #edit connections
 #rename the connection
 #go to the IPv4 tab
 #Change the method to "Link-local only" (to access pi zero) or "Shared to another computer" (to share internet access)
 
+
 #connect to the pi
 ssh pi@raspberrypi.local
 #password is raspberry until you change it or add other users
 #to change the password type 'passwd' after you sign in
-# type 'ifconfig' to get the pi's ip address
+#type 'ifconfig' to get the pi's ip address
 
 
-#more infomration on this blog: http://blog.gbaman.info/?p=791
+#more information on this blog: http://blog.gbaman.info/?p=791
 
-#it is a good idea to 
+#if you want to change the hostname of the pi to something else 
+#edit hosts and hostname with your favorite text editor
+sudo nano /etc/hosts
+sudo nano /etc/hostname
+
+#initiate the change
+sudo /etc/init.d/hostname.sh
+#then reboot
+sudo reboot
+
+
+
 
 #it is a good idea to run apt-get update and upgrade
 sudo apt-get update
